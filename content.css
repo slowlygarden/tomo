@@ -1,0 +1,80 @@
+.tab-saver-overlay {
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  z-index: 2147483647;
+}
+
+.tab-saver-overlay svg {
+  cursor: default;
+}
+
+.clickable {
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.clickable:hover {
+  opacity: 0.8;
+  fill: #666666;
+}
+
+#fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Make sure SVG groups are clickable */
+#all,
+#this,
+#upload {
+  pointer-events: all;
+}
+
+/* Background cloud */
+#bg path {
+  fill: #2d8e9e;
+}
+
+/* Default states */
+.clickable .hover {
+  fill: #ffffff;
+  fill-opacity: 0;
+  transition: all 0.2s;
+}
+
+.clickable .icon,
+.clickable .icon * {
+  fill: #ffffff;
+  fill-opacity: 0.6;
+  transition: all 0.2s;
+}
+
+/* Hover states */
+.clickable:hover .hover {
+  fill: #ffffff;
+  fill-opacity: 0.3;
+}
+
+.clickable:hover .icon,
+.clickable:hover .icon * {
+  fill: #ffffff !important;
+  fill-opacity: 1 !important;
+}
+
+/* Remove any other hover effects that might interfere */
+.clickable:hover {
+  opacity: 1;
+}
+
+/* Background should not be clickable */
+#Vector {
+  pointer-events: none;
+}
